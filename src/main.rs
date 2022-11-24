@@ -1,13 +1,13 @@
-use std::io;
 
 fn main() {
-    println!("Guess the number!");
+    let x = 5;
 
-    println!("Please input your guess.");
+    let x = x + 1;
 
-    let mut guess = String::new();
+    {
+        let x = x * 2;
+        println!("The value of x in the inner scope is: {x}");
+    }
 
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
+    println!("The value of x is: {x}");
 }
